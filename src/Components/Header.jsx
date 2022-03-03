@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import pizzaLogo from "../assets/img/pizza-logo.svg";
+import pizzaLogo from "../assets/img/pizza.gif";
 import Basket from "./Basket";
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container">
         <Link to="/">
           <div className="header__logo">
-            <img width="38" src={pizzaLogo} alt="Pizza logo" />
+            <img width="150" src={pizzaLogo} alt="Pizza logo" />
             <div>
               <h1>Tashir Pizza</h1>
             </div>

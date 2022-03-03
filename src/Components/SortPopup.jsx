@@ -1,11 +1,10 @@
 import React from "react";
 
 const SortPopup = ({ items }) => {
-      
   const [visiblePopup, setVisiblePopup] = React.useState(false);
   const sortRef = React.useRef();
   const [categories, setCategoris] = React.useState(0);
-  const activeName = items[categories];
+  const activeName = items[categories].name;
 
   const togglePopup = () => {
     setVisiblePopup(!visiblePopup);
@@ -28,7 +27,8 @@ const SortPopup = ({ items }) => {
   return (
     <div ref={sortRef} className="sort">
       <div className="sort__label">
-        <svg className={visiblePopup ? "rotated" : ''}
+        <svg
+          className={visiblePopup ? "rotated" : ""}
           width="10"
           height="6"
           viewBox="0 0 10 6"
@@ -54,7 +54,7 @@ const SortPopup = ({ items }) => {
                     onClick={() => selectItem(index)}
                     key={index}
                   >
-                    {item}
+                    {item.name}
                   </li>
                 );
               })}

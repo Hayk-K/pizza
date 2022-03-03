@@ -6,15 +6,13 @@ import Home from "./pages/Home";
 import "./scss/app.scss";
 
 function App() {
-  const [pizzas, setPizzas] = React.useState([])
-
- 
+  const [pizzas, setPizzas] = React.useState([]);
 
   React.useEffect(() => {
-     fetch('http://localhost:3000/db.json')
-     .then(resp => resp.json())
-     .then( obj => setPizzas(obj.pizzas))
-  },[])
+    fetch("http://localhost:3000/db.json")
+      .then((resp) => resp.json())
+      .then((obj) => setPizzas(obj.pizzas));
+  }, []);
 
   return (
     <div className="App">
