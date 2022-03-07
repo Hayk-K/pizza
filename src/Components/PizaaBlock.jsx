@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
+
 const PizaaBlock = ({ name, imageUrl, price, types, sizes }) => {
 
   const typesName = ["тонкое", "традиционное"];
@@ -15,6 +16,7 @@ const PizaaBlock = ({ name, imageUrl, price, types, sizes }) => {
     setActiveSize(index);
   };
 
+  
   return (
     <div className="pizza-block">
       <img className="pizza-block__image" src={imageUrl} alt="Pizza" />

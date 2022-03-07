@@ -20,3 +20,4 @@ const filters = (state = initialState, action) => {
 };
 
 export default filters;
+  
