@@ -5,6 +5,7 @@ import Categories from "../Components/Categories";
 import LoadingBlock from "../Components/LoadingBlock";
 import PizaaBlock from "../Components/PizaaBlock";
 import SortPopup from "../Components/SortPopup";
+import { addPizzaToCart } from "../redux/actions/cart";
 import { setCategory, setSortBy } from "../redux/actions/filters";
 import { fetchPizzas } from "../redux/actions/pizzas";
 
@@ -40,6 +41,10 @@ const Home = () => {
     dispatch(setSortBy(index));
   }, []);
 
+  const addPizzaToRedux = (obj) => {
+    dispatch(addPizzaToCart(obj));
+  };
+
   return (
     <div className="container">
       <div className="content__top">
@@ -58,7 +63,13 @@ const Home = () => {
       <div className="content__items">
         {isLoaded
           ? items.map((item) => {
-              return <PizaaBlock {...item} key={item.id} />;
+              return (
+                <PizaaBlock
+                  addPizza={addPizzaToRedux}
+                  {...item}
+                  key={item.id}
+                />
+              );
             })
           : Array(10)
               .fill()

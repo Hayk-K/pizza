@@ -1,13 +1,10 @@
 import React from "react";
 
 const SortPopup = React.memo(({ items, sortBy, onClickSortType }) => {
-  
   const [visiblePopup, setVisiblePopup] = React.useState(false);
   const sortRef = React.useRef();
-  
-  const activeName =  items.find(obj => obj.type === sortBy).name;
 
-  console.log(activeName);
+  const activeName = items.find((obj) => obj.type === sortBy).name;
 
   const togglePopup = () => {
     setVisiblePopup(!visiblePopup);
@@ -66,6 +63,5 @@ const SortPopup = React.memo(({ items, sortBy, onClickSortType }) => {
       )}
     </div>
   );
-}
-)
+});
 export default SortPopup;
