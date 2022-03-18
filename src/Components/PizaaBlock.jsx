@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-const PizaaBlock = ({ id, name, imageUrl, price, types, sizes, addPizza }) => {
+const PizaaBlock = ({ id, name, imageUrl, price, types, sizes, addPizza,addedCount }) => {
   const typesName = ["тонкое", "традиционное"];
   const sizesName = [26, 30, 40];
   const [activeTypes, setActiveTypes] = React.useState(types[0]);
@@ -78,7 +78,8 @@ const PizaaBlock = ({ id, name, imageUrl, price, types, sizes, addPizza }) => {
             />
           </svg>
           <span onClick={onAddPizza}>Добавить</span>
-          <i>2</i>
+         
+         {addedCount &&  <i>{addedCount}</i> }
         </div>
       </div>
     </div>
