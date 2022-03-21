@@ -8,7 +8,7 @@ import SortPopup from "../Components/SortPopup";
 import { addPizzaToCart } from "../redux/actions/cart";
 import { setCategory, setSortBy } from "../redux/actions/filters";
 import { fetchPizzas } from "../redux/actions/pizzas";
-import cart from "../redux/reducers/cart";
+
 
 const categoriesName = [
   "Мясные",
@@ -70,7 +70,7 @@ const Home = () => {
                   addPizza={addPizzaToRedux}
                   {...item}
                   key={item.id}
-                  addedCount={cartItems[item.id] && cartItems[item.id].length}
+                  addedCount={cartItems[item.id] && cartItems[item.id].items.length}
                 />
               );
             })
